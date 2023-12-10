@@ -1,7 +1,7 @@
 import searchIcon from "@/assets/icons/search.svg"
 import Modal from "../Modal";
 import { Input } from "@/components/common/ui/input"
-import useKeyPress from "../UseKeyPress";
+import useKeyPress from "../../../Hooks/UseKeyPress";
 import { useRef } from "react";
 
 function SearchAcrossPlatform() {

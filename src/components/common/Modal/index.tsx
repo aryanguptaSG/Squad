@@ -9,19 +9,19 @@ import {
 } from "@/components/common/ui/dialog"
 
 type Props = {
-    triggerComponent : React.ReactNode,
-    title : string,
-    description?:string,
-    children:React.ReactNode,
-    footer?:React.ReactNode
+  triggerComponent: React.ReactNode,
+  title: string,
+  description?: string,
+  children: React.ReactNode,
+  footer?: React.ReactNode
 }
 
-export default function Modal({triggerComponent,title,description="",children,footer}:Props) {
+export default function Modal({ triggerComponent, title, description = "", children, footer }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <div>
-            {triggerComponent}
+          {triggerComponent}
         </div>
       </DialogTrigger>
       <DialogContent className="max-w-fit">
@@ -32,14 +32,14 @@ export default function Modal({triggerComponent,title,description="",children,fo
           </DialogDescription>
         </DialogHeader>
         <div>
-        {
+          {
             children
-        }
+          }
         </div>
         <DialogFooter>
           <div>
             {
-                footer
+              footer
             }
           </div>
         </DialogFooter>

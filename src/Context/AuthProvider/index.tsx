@@ -6,7 +6,7 @@ type AuthProviderProps = {
   children: React.ReactNode
   defaultAuth?: Auth
   storageKey?: string
-  fallBackComponent:React.ReactNode
+  fallBackComponent: React.ReactNode
 }
 
 type AuthProviderState = {
@@ -31,7 +31,7 @@ export function AuthProvider({
   const [auth, setAuth] = useState<Auth>(
     () => (localStorage.getItem(storageKey) as Auth) || defaultAuth
   )
-  
+
   const value = {
     auth,
     setAuth: (auth: Auth) => {
@@ -42,7 +42,7 @@ export function AuthProvider({
 
   return (
     <AuthProviderContext.Provider {...props} value={value}>
-      {auth !== "null" ? children:fallBackComponent}
+      {auth !== "null" ? children : fallBackComponent}
     </AuthProviderContext.Provider>
   )
 }

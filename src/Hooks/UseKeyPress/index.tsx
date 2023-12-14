@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 
-const useKeyPress = (key:any, callback:any) => {
+const useKeyPress = (key: any, callback: any) => {
     const callBackRef = useRef(callback);
 
     useEffect(() => {
         callBackRef.current = callback;
     }, [])
     useEffect(() => {
-        const handlePress = (event:any) => {
+        const handlePress = (event: any) => {
             if (event.code === key) {
                 callBackRef.current(event);
             }
@@ -19,7 +19,7 @@ const useKeyPress = (key:any, callback:any) => {
     }, [key])
 }
 
-export const useKeyPress2 = (key:any, key1:any, callback:any) => {
+export const useKeyPress2 = (key: any, key1: any, callback: any) => {
     const callBackRef = useRef(callback);
     let code = ""
 
@@ -27,7 +27,7 @@ export const useKeyPress2 = (key:any, key1:any, callback:any) => {
         callBackRef.current = callback;
     }, [])
     useEffect(() => {
-        const handlePress = (event:any) => {
+        const handlePress = (event: any) => {
             code = code + event.code
             if (code.includes(key) && code.includes(key1)) {
                 callBackRef.current(event);

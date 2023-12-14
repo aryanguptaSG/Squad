@@ -7,9 +7,9 @@ import { ThemeToggle } from "../ThemeToggle";
 
 function Navbar() {
   return (
-    <div className="bg-[#353535] h-[60px] w-full text-white fixed z-50 flex justify-between items-center">
+    <div className="bg-primaryBlack h-[60px] w-full text-white fixed z-50 flex justify-between items-center">
         <div className="pl-[10px] flex items-center">
-            <div className="hover:bg-[#5e5e5e] hover:rounded-md p-1 cursor-pointer h-fit">
+            <div className="hover:bg-[#606060] hover:rounded-md p-1 cursor-pointer h-fit">
                 <img width={24} height={24} src={MenuIcon} alt="" />
             </div>
             <div className="flex items-center space-x-2 ml-10">

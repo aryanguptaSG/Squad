@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <AuthProvider fallBackComponent={<LoginPage/>}>
       <BrowserRouter>
-      <div className="bg-[#353535]">
+      <div className="bg-primaryBlack">
         <Navbar/>
         <div className="flex justify-start h-[calc(100vh-60px)] relative top-[60px]">
           <Sidebar/>

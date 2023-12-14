@@ -23,10 +23,10 @@ function ProfileImage(props:Props) {
   const {setAuth} = useAuth()
     return (
       <DropdownMenu>
-      <DropdownMenuTrigger className="bg-[#353535] hover:bg-[#5a5a5a] outline-none" asChild>
-      <Avatar className="bg-[#5D5C5C] dark:bg-[#5D5C5C] w-[30px] h-[30px] cursor-pointer">
+      <DropdownMenuTrigger className="bg-primaryBlack hover:bg-hoverBlack outline-none" asChild>
+      <Avatar className="w-[35px] h-[35px] cursor-pointer">
           <AvatarImage src={props.src} alt="profile" />
-          <AvatarFallback className="bg-[#5D5C5C] dark:bg-[#5D5C5C]">{props.fallback}</AvatarFallback>
+          <AvatarFallback className="bg-black1 dark:bg-black1 border-borderBlack border-[1px]">{props.fallback}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

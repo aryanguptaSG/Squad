@@ -16,6 +16,17 @@ module.exports = {
       },
     },
     extend: {
+      colors: {
+        primaryBlack : "#353535",
+        hoverBlack : "#5a5a5a",
+        borderBlack : "#4f4f4f",
+        black1 : "#434343",
+        darkGray : "#999999",
+        gray1 : "#F5F5F5",
+        gray2 : "#CCCCCC",
+        bgLight : "#E6E6E6",
+        primaryBlue : "#1979BB"
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

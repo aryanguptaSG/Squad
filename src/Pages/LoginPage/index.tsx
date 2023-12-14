@@ -13,13 +13,13 @@ function Register({setLoginView}:any) {
     const {setAuth} = useAuth()
   return (
     <div className="h-screen flex justify-center items-center">
-        <div className="bg-[#F5F5F5] w-[689px] h-[599px] px-5 pt-2 border-[#00000037] border rounded-lg relative">
+        <div className="bg-gray1 w-[689px] h-[599px] px-5 pt-2 border-gray2 border rounded-lg relative">
             <img className="absolute -right-48 top-10 -z-10"  width={285} height={435} src={Registerimg} alt="" />
             <div className="flex justify-start items-center space-x-2">
                 <img src={arrowLeft} alt="" width={18} height={18} />
                 <div onClick={()=>{setLoginView(true)}} className="cursor-pointer">
                     <p className="text-[16px] font-semibold">Login</p> 
-                    <p className="h-[1px] w-[22px] bg-[#1B78BA]"></p>
+                    <p className="h-[1px] w-[22px] bg-primaryBlue"></p>
                 </div>
             </div>
             <div  className="flex justify-center flex-col items-center mt-10 px-24">
@@ -40,12 +40,12 @@ function Login({setLoginView}:any) {
     const {setAuth} = useAuth()
   return (
     <div className="h-screen flex justify-center items-center">
-        <div className="bg-[#F5F5F5] w-[689px] h-[599px] px-5 pt-2 border-[#00000037] border rounded-lg relative">
+        <div className="bg-gray1 w-[689px] h-[599px] px-5 pt-2 border-gray2 border rounded-lg relative">
             <img className="absolute -left-48 top-10 -z-10"  width={285} height={435} src={Loginimg} alt="" />
             <div className="flex justify-end items-center space-x-2">
                 <div onClick={()=>{setLoginView(false)}} className="cursor-pointer">
                     <p className="text-[16px] font-semibold">Register</p> 
-                    <p className="h-[1px] w-[52px] bg-[#1B78BA]"></p>
+                    <p className="h-[1px] w-[52px] bg-primaryBlue"></p>
                 </div>
                 <img src={arrowRight} alt="" width={18} height={18} />
             </div>

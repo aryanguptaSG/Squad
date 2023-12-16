@@ -24,7 +24,7 @@ function Register({setLoginView}:any) {
             </div>
             <div  className="flex justify-center flex-col items-center mt-10 px-24">
                 <img width={85} height={85} src={logo} alt=""  />
-                <h1 className="text-[30px] font-bold mt-5">Golu Space</h1>
+                <h1 className="text-[30px] font-bold mt-5">Squad</h1>
                 <p className="text=[#717171] text-sm">One Stop Solution For All Your School Needs </p>
                 <Input type="email" placeholder="Email" className="dark:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 mt-10" />
                 <Input type="password" placeholder="Password" className="dark:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 mt-5" />
@@ -51,7 +51,7 @@ function Login({setLoginView}:any) {
             </div>
             <div  className="flex justify-center flex-col items-center mt-10 px-24">
                 <img width={85} height={85} src={logo} alt=""  />
-                <h1 className="text-[30px] font-bold mt-5">Golu Space</h1>
+                <h1 className="text-[30px] font-bold mt-5">Squad</h1>
                 <p className="text=[#717171] text-sm">One Stop Solution For All Your School Needs </p>
                 <Input type="email" placeholder="Email" className="dark:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 mt-10" />
                 <Input type="password" placeholder="Password" className="dark:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 mt-5" />

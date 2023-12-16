@@ -6,7 +6,7 @@ type Props ={
 
 function PrimaryButton(props:Props) {
   return (
-    <button className={`bg-primaryBlue px-10 py-1 text-white rounded-xl ${props.className}`} onClick={props.onClick}>{props.text}</button>
+    <button className={`bg-primaryBlue px-10 py-1 text-white rounded-md ${props.className}`} onClick={props.onClick}>{props.text}</button>
   )
 }
 

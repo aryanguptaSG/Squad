@@ -25,7 +25,7 @@ module.exports = {
         gray1 : "#F5F5F5",
         gray2 : "#CCCCCC",
         bgLight : "#E6E6E6",
-        primaryBlue : "#1979BB"
+        primaryBlue : "#4285F4"
       },
       keyframes: {
         "accordion-down": {

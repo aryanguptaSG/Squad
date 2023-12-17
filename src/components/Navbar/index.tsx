@@ -17,15 +17,15 @@ function Navbar() {
             </div>
             <div className="flex items-center space-x-2 ml-10">
                 <img width={40} height={40} src={Logo} alt="" />
-                <p className="text-[20px] font-bold text-white">Squad</p>
+                <p className="text-[20px] font-bold text-white font-Montaga">Squad</p>
             </div>
             <SearchAcrossPlatform/>
         </div>
         <div className="pr-10 flex space-x-5 items-center">
-            <DropDown showdownIcon={true} className="rounded-md" titleClassName="text-[#4285F4] hover:bg-[#303030] font-semibold text-sm cursor-pointer  px-5 py-[5px] rounded-md" value={workSpace.value} setValue={(newVal:string)=>{workSpace.value=newVal}} optionList={["Golu School","Shiva Ji Inter Collage"]} />
+            <DropDown showdownIcon={true} className="rounded-md" titleClassName="text-[#4285F4] hover:bg-[#303030] font-semibold text-sm cursor-pointer  px-5 py-[5px] rounded-md font-Montserrat" value={workSpace.value} setValue={(newVal:string)=>{workSpace.value=newVal}} optionList={["Golu School","Shiva Ji Inter Collage"]} />
             <ThemeToggle/>
             <img width={24} height={24} src={Bell} alt="" />
-            <ProfileImage src="" fallback="AG"/>
+            <ProfileImage src="" fallback="AG" dropdown={true}/>
         </div>
     </div>
   )

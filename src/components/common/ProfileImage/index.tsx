@@ -15,7 +15,8 @@ import { useAuth } from "@/Context/AuthProvider"
 
 type Props = {
     src:string,
-    fallback: string
+    fallback: string,
+    dropdown?:boolean
 }
 
 
@@ -29,11 +30,11 @@ function ProfileImage(props:Props) {
           <AvatarFallback className="bg-black1 dark:bg-black1 border-borderBlack border-[1px]">{props.fallback}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      {props.dropdown&&<DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setAuth("null")}>
           Log Out
         </DropdownMenuItem>
-      </DropdownMenuContent>
+      </DropdownMenuContent>}
     </DropdownMenu>
       )
 }

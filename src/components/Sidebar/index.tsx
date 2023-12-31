@@ -4,7 +4,6 @@ import invitePeople from "@/assets/icons/invite_people.svg"
 import notesIcon from "@/assets/icons/notes.svg"
 import QuestionBankIcon from "@/assets/icons/question_bank.svg"
 import classroomIcon from "@/assets/icons/classroom.svg"
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { sideBarExpanded } from "@/Context/Signals"
 
@@ -13,7 +12,6 @@ import { sideBarExpanded } from "@/Context/Signals"
 
 
 function Sidebar() {
-    const [activeIcon, setactiveIcon] = useState(0);
     const navigate = useNavigate();
     const sidebarElements = [
     {
@@ -52,7 +50,7 @@ function Sidebar() {
         <div className={`flex flex-col items-start pl-[10px] justify-start space-y-10 w-full`}>
         {
             sidebarElements.map((item,i)=>{
-                return <div onClick={()=>{setactiveIcon(i); navigate(item.to)}} key={i} className={`flex items-center space-x-5 overflow-hidden cursor-pointer p-1 ${sideBarExpanded.value && 'hover:bg-[#3c3c3c] hover:rounded-md'} ${i==activeIcon ?"bg-[#606060] rounded-md p-1":""}`}>
+                return <div onClick={()=>{navigate(item.to)}} key={i} className={`flex items-center space-x-5 overflow-hidden cursor-pointer p-1 ${sideBarExpanded.value && 'hover:bg-[#3c3c3c] hover:rounded-md'} ${window.location.pathname===item.to ?"bg-[#606060] rounded-md p-1":""}`}>
                     <img width={24} height={24} src={item.icon} alt={item.description}  />
                     {sideBarExpanded.value && <p className="whitespace-nowrap text-ellipsis text-gray2 text-[14px] pr-5 font-Montserrat" onMouseOver={()=>{sideBarExpanded.value=true}}>{item.description}</p>}
                 </div>

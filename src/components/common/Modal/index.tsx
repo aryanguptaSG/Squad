@@ -20,7 +20,7 @@ export default function Modal({triggerComponent,title,description="",children,fo
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div>
+        <div className="w-full">
             {triggerComponent}
         </div>
       </DialogTrigger>

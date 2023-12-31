@@ -15,16 +15,19 @@ type Props = {
     titleClassName? : string,
     className? : string,
     align ? : Align,
-    showdownIcon? :boolean
+    showdownIcon? :boolean,
+    iconW?:string,
+    iconH?:string
+
 }
 
 function DropDown(props:Props) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="bg-primaryBlack hover:bg-hoverBlack outline-none" asChild>
+      <DropdownMenuTrigger className="bg-primaryBlack outline-none" asChild>
         <div className={`flex items-center space-x-3 cursor-pointer ${props.titleClassName}`}>
           <div>{props.value}</div>
-          {props.showdownIcon&&<img width={24} height={24} src={arrowDown} alt="" />}
+          {props.showdownIcon&&<img width={props.iconW?props.iconW: 24} height={props.iconH?props.iconH:24} src={arrowDown} alt="" />}
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align={props.align?props.align:"center"} className={`dark:bg-primaryBlack dark:border-borderBlack dark:border-1`}>

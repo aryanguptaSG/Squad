@@ -13,7 +13,7 @@ function Text(props:Props) {
     const Ele = as;
     return (
         <Ele
-            className={`${cn('dark:text-light-gray' ,className)}`}
+            className={`${cn('text-black dark:text-light-gray' ,className)}`}
             style={{ textTransform: capitalize ? "uppercase" : "none" }}
         >
             {props.children}

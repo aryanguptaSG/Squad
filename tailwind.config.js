@@ -231,6 +231,7 @@ module.exports = {
         blue:{
           login:"#1979BB",
           primaryBlue : "#4285F4",
+          100:"#DDF4FF"
         }
       },
       keyframes: {
@@ -248,7 +249,20 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       boxShadow: {
-        
+        "dark-inset":
+          "inset 4px 4px 10px 0 rgba(0, 0, 0, 0.7), inset -4px -4px 10px 0 rgba(58, 58, 58, 0.5)",
+        "light-inset":
+          "inset 7px 7px 10px 0 rgba(0, 0, 0, 0.15), -7px -7px 10px 0 rgba(255, 255, 255, 0.8)",
+        "dark-input":
+          "4px 4px 10px 0 rgb(0 0 0 / 70%), -4px -4px 10px 0 rgb(58 58 58 / 30%)",
+        "light-input":
+          "7px 7px 10px 0 rgba(0, 0, 0, 0.15), -7px -7px 10px 0 rgba(255, 255, 255, 0.8)",
+        button: "4px 4px 10px 0 rgba(0, 0, 0, 0.7), -4px -4px 10px 0 rgba(58, 58, 58, 0.5), -1px -1px 0 0 rgba(255, 255, 255, 0.05)",
+        "dark-box": "0px 0px 10px 0 #000",
+        "box": "0px 0px 10px -3px gray",
+        "gray-box": "0px 0px 10px 0px gray",
+        "light-right-inset":
+          "inset -7px 0 9px -7px rgba(255,255,255,0.2)",
       },
     },
   },

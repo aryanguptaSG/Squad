@@ -25,15 +25,20 @@
     "clsx": "^2.0.0",
     "cross-env": "^7.0.3",
     "electron-is-dev": "^2.0.0",
+    "highcharts": "^11.4.3",
+    "highcharts-react-official": "^3.2.1",
     "lucide-react": "^0.294.0",
+    "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
     "tailwind-merge": "^2.1.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^20.10.4",
+    "@types/papaparse": "^5.3.14",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.10.0",

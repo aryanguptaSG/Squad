@@ -3,6 +3,7 @@ import announcement from "@/assets/icons/announcement.svg";
 import invitePeople from "@/assets/icons/invite_people.svg";
 import notesIcon from "@/assets/icons/notes.svg";
 import QuestionBankIcon from "@/assets/icons/question_bank.svg";
+import PaymentIcon from "@/assets/icons/payment.svg";
 import classroomIcon from "@/assets/icons/classroom.svg";
 import { sideBarExpanded } from "@/Context/Signals";
 import Leaf from "./Leaf";
@@ -18,6 +19,12 @@ function Sidebar() {
     },
     {
       type: "LEAF",
+      icon: PaymentIcon,
+      description: "Fees",
+      to: "/fees",
+    },
+    {
+      type: "LEAF",
       icon: announcement,
       description: "Announcement",
       to: "/announcement",
@@ -27,18 +34,6 @@ function Sidebar() {
       icon: invitePeople,
       description: "Invite People",
       to: "/invite",
-    },
-    {
-      type: "LEAF",
-      icon: notesIcon,
-      description: "Notes",
-      to: "/notes",
-    },
-    {
-      type: "LEAF",
-      icon: QuestionBankIcon,
-      description: "Question Bank",
-      to: "/question-bank",
     },
     {
       type: "LEAF",

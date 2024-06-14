@@ -8,6 +8,7 @@ import classroomIcon from "@/assets/icons/classroom.svg";
 import { sideBarExpanded } from "@/Context/Signals";
 import Leaf from "./Leaf";
 import Section from "./Section";
+import { Authorization } from "@/Context/AuthProvider/AuthTypes";
 
 function Sidebar() {
   const sidebarElements = [
@@ -16,30 +17,35 @@ function Sidebar() {
       icon: homeIcon,
       description: "Home",
       to: "/",
+      Access: Authorization.ReadWrite,
     },
     {
       type: "LEAF",
       icon: PaymentIcon,
       description: "Fees",
       to: "/fees",
+      Access: Authorization.ReadWrite,
     },
     {
       type: "LEAF",
       icon: announcement,
       description: "Announcement",
       to: "/announcement",
+      Access: Authorization.ReadWrite,
     },
     {
       type: "LEAF",
       icon: invitePeople,
       description: "Invite People",
       to: "/invite",
+      Access: Authorization.ReadWrite,
     },
     {
       type: "LEAF",
       icon: classroomIcon,
       description: "Class Rooms",
       to: "/classroom",
+      Access: Authorization.ReadWrite,
     },
   ];
 
@@ -59,9 +65,11 @@ function Sidebar() {
         className={`flex flex-col items-start pl-[10px] justify-start space-y-10 w-full`}
       >
         {sidebarElements.map((item, i) => {
+          if (item.Access == Authorization.NoAccess) {
+            return null;
+          }
           switch (item.type) {
             case "LEAF":
-              console.log("item =>   ", item);
               return <Leaf item={item} key={i} />;
             case "TOPLEVEL":
               return <Section section={item} />;

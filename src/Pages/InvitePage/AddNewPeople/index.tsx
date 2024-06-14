@@ -4,6 +4,7 @@ import { Input } from "@/components/common/ui/input";
 import DropDown from "@/components/common/DropDown";
 import { readFile } from "@/lib/utils";
 import { useState } from "react";
+import { peopleInWorkspace } from "@/Context/Signals";
 
 type AddNewPeopleModalProps = {
   triggerComponent: React.ReactNode;
@@ -51,7 +52,14 @@ function AddNewPeopleModal(props: AddNewPeopleModalProps) {
           />
         </div>
         <div className="flex justify-end mt-5">
-          <Button text="Create" className="py-1 rounded-md" />
+          <Button
+            text="Create"
+            className="py-1 rounded-md"
+            onClick={() => {
+              emails.map((item: any) => (item.role = selectedRole));
+              peopleInWorkspace.value = [...peopleInWorkspace.value, ...emails];
+            }}
+          />
         </div>
         <pre className="w-full max-h-64 overflow-scroll">
           {JSON.stringify(emails, null, 4)}

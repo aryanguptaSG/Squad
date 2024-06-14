@@ -1,50 +1,48 @@
-enum Authorization {
-    NoAccess,
-    Read,
-    ReadWrite,
-    Checker,
-    Create
-  }
-  
+export enum Authorization {
+  NoAccess,
+  Read,
+  ReadWrite,
+  Checker,
+  Create,
+}
 
-
-
-let getAccessTypeFromString = (str:string):Authorization => {
+let getAccessTypeFromString = (str: string): Authorization => {
   switch (str) {
-    case "R":{
-        return Authorization.Read;
+    case "R": {
+      return Authorization.Read;
     }
-    case "Read":{
-        return Authorization.Read;
+    case "Read": {
+      return Authorization.Read;
     }
-    case "RW":{
-        return Authorization.ReadWrite;
+    case "RW": {
+      return Authorization.ReadWrite;
     }
-    case "ReadWrite":{
-        return Authorization.ReadWrite;
+    case "ReadWrite": {
+      return Authorization.ReadWrite;
     }
-    case "Write":{
-        return Authorization.ReadWrite;
+    case "Write": {
+      return Authorization.ReadWrite;
     }
-    case "CHECKER":{
-        return Authorization.Checker;
+    case "CHECKER": {
+      return Authorization.Checker;
     }
-    case "Create":{
-        return Authorization.Create;
+    case "Create": {
+      return Authorization.Create;
     }
-    default :{
-        return Authorization.NoAccess
+    default: {
+      return Authorization.NoAccess;
     }
-    
   }
-}
+};
 
-let getAccessTypeFromBool = (bool:boolean) : Authorization => {
+let getAccessTypeFromBool = (bool: boolean): Authorization => {
   switch (bool) {
-  case true : return Authorization.ReadWrite
-  default : return Authorization.NoAccess
+    case true:
+      return Authorization.ReadWrite;
+    default:
+      return Authorization.NoAccess;
   }
-}
+};
 
 // let getArrayData = (dict, key) => {
 //   switch Dict.get(dict, key) {

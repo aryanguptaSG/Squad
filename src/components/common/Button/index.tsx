@@ -22,11 +22,11 @@ function Button(props: Props) {
   let btnColor = "";
   switch (variant) {
     case "default":
-      btnColor = "bg-blue-primaryBlue text-white";
+      btnColor = "bg-Blue-primaryBlue text-white";
       break;
     case "outline":
       btnColor =
-        "border-1.5 border-blue-primaryBlue text-blue-primaryBlue dark:text-blue-primaryBlue";
+        "border-1.5 border-Blue-primaryBlue text-blue-primaryBlue dark:text-blue-primaryBlue";
       break;
     case "disabled":
       btnColor =

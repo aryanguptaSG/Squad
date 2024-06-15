@@ -219,7 +219,7 @@ module.exports = {
       colors: {
         Black:{
           primaryBlack : "#353535",
-          hoverBlack : "#5a5a5a",
+          hoverBlack : "#2b2b2b",
           borderBlack : "#4f4f4f",
           black1 : "#434343",
         },

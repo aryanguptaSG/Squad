@@ -77,7 +77,7 @@ function Sidebar() {
 
   return (
     <div
-      className={`bg-Black-primaryBlack transition-all duration-300 ${
+      className={`bg-white dark:bg-black transition-all duration-300 ${
         sideBarExpanded.value ? "w-[250px]" : "w-[60px]"
       } text-white pt-10`}
       onMouseOver={() => {

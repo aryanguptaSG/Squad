@@ -39,7 +39,7 @@ function InvitePage() {
   }, [peopleInWorkspace.value]);
 
   return (
-    <div className="bg-white text-black dark:bg-black dark:text-white p-5 pl-10 min-h-full">
+    <div className="bg-Gray-bgLight dark:bg-Gray-dark-gray dark:text-white p-5 pl-10 min-h-full">
       <div className="flex justify-between">
         <div>
           <h1 className="body-1 font-Montserrat">Hey , Aryan Gupta </h1>

@@ -10,13 +10,13 @@ function SearchAcrossPlatform() {
   const triggerComponent = (
     <div
       ref={trigger}
-      className="cursor-pointer h-[40px] w-[250px] bg-Black-black1 rounded-md ml-[76px] flex justify-start items-center px-2 border-Black-borderBlack border-[0.1px]"
+      className="cursor-pointer h-[40px] w-[250px] bg-Gray-light-gray dark:bg-Black-black1 rounded-md ml-[76px] flex justify-start items-center px-2 border-Gray-light-gray dark:border-Black-borderBlack border-[0.1px]"
     >
       <img className="" width={24} height={24} src={searchIcon} alt="search" />
       <p className="text-[12px] ml-[10px] text-Gray-darkGray font-Montserrat">
         Search Across Platform{" "}
       </p>
-      <p className="text-[12px] ml-[30px] text-Gray-darkGr font-Montserrat">
+      <p className="text-Gray-darkGray dark:text-Gray-darkGray text-[12px] ml-[30px] text-Gray-darkGr font-Montserrat">
         {isMac ? "⌘+K" : "Ctrl+K"}
       </p>
     </div>

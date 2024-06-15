@@ -20,11 +20,11 @@ export function ThemeToggle({ bgClassName, sunClassName }: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className="bg-Black-primaryBlack hover:bg-Black-hoverBlack outline-none"
+        className="bg-transparent dark:bg-black hover:bg-Gray-light-gray dark:hover:bg-Black-hoverBlack outline-none"
         asChild
       >
         <Button
-          className={`bg-Black-primaryBlack hover:bg-Black-hoverBlack outline-none dark:bg-Black-primaryBlack dark:hover:bg-Black-hoverBlack dark:outline-none ${bgClassName}`}
+          className={`bg-transparent dark:bg-black hover:bg-Gray-light-gray dark:hover:bg-Black-hoverBlack outline-none  dark:outline-none ${bgClassName}`}
           size="icon"
         >
           <Sun

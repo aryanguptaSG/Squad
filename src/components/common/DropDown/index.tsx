@@ -24,7 +24,7 @@ function DropDown(props: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className="bg-Black-primaryBlack outline-none"
+        className="bg-transparent dark:bg-black outline-none"
         asChild
       >
         <div

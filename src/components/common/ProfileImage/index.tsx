@@ -25,14 +25,14 @@ function ProfileImage(props: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className="bg-Black-primaryBlack hover:bg-Black-hoverBlack outline-none"
+        className="bg-Gray-gray hover:bg-Gray-darkGray dark:bg-Black-primaryBlack dark:hover:bg-Black-hoverBlack outline-none"
         asChild
       >
         <Avatar
           className={`w-[35px] h-[35px] cursor-pointer ${props.className}`}
         >
           <AvatarImage src={props.src} alt="profile" />
-          <AvatarFallback className="bg-Black-black1 dark:bg-Black-black1 border-Black-borderBlack border-[1px] text-white">
+          <AvatarFallback className="bg-Gray-gray hover:bg-Gray-darkGray dark:bg-Black-primaryBlack dark:hover:bg-Black-hoverBlack dark:border-Black-borderBlack dark:border-[1px] text-white">
             {props.fallback}
           </AvatarFallback>
         </Avatar>

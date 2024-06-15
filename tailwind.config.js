@@ -217,21 +217,36 @@ module.exports = {
         3.5: "14px",
       },
       colors: {
-        primaryBlack : "#353535",
-        hoverBlack : "#5a5a5a",
-        borderBlack : "#4f4f4f",
-        black1 : "#434343",
-        darkGray : "#999999",
-        "dark-gray": "#1a1a1a",
-        "light-gray": "#eee",
-        gray: "#aaa",
-        gray1 : "#F5F5F5",
-        gray2 : "#CCCCCC",
-        bgLight : "#E6E6E6",
-        blue:{
-          login:"#1979BB",
-          primaryBlue : "#4285F4",
-          100:"#DDF4FF"
+        Black:{
+          primaryBlack : "#353535",
+          hoverBlack : "#5a5a5a",
+          borderBlack : "#4f4f4f",
+          black1 : "#434343",
+        },
+        Gray:{
+          darkGray : "#999999",
+          "dark-gray": "#1a1a1a",
+          "light-gray": "#eee",
+          gray: "#aaa",
+          gray1 : "#F5F5F5",
+          gray2 : "#CCCCCC",
+          bgLight : "#E6E6E6",
+        },
+        White:{
+
+        },
+        Red:{
+
+        },
+        Green:{
+
+        },
+        Yellow:{
+
+        },
+        Blue:{
+          primaryBlue : "#356AC3",
+          hoverPrimaryBlue:"#203F72"
         }
       },
       keyframes: {

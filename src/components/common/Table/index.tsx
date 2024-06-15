@@ -175,7 +175,7 @@ export function DataTableDemo({ data }: any) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border border-gray">
+      <div className="rounded-md border border-Gray-gray">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -199,7 +199,7 @@ export function DataTableDemo({ data }: any) {
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
-                  className="dark:border-dark-gray border-gray"
+                  className="dark:border-Gray-dark-gray border-Gray-gray"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >

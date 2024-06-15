@@ -1,5 +1,5 @@
 import MenuIcon from "@/assets/icons/Menu.svg";
-import Logo from "@/../public/logo.svg";
+import Logo from "@/../public/logo_1.svg";
 import Bell from "@/assets/icons/Bell.svg";
 import DropDown from "../common/DropDown";
 import SearchAcrossPlatform from "../common/SearchAcrossPlatform";
@@ -10,7 +10,7 @@ import { sideBarExpanded } from "@/Context/Signals";
 
 function Navbar() {
   return (
-    <div className="bg-primaryBlack h-[60px] w-full text-white fixed z-50 flex justify-between items-center">
+    <div className="bg-Black-primaryBlack h-[60px] w-full text-white fixed z-50 flex justify-between items-center">
       <div className="pl-[10px] flex items-center">
         <div
           className="hover:bg-[#606060] hover:rounded-md p-1 cursor-pointer w-fit h-fit"
@@ -21,8 +21,7 @@ function Navbar() {
           <img width={24} height={24} src={MenuIcon} alt="" />
         </div>
         <div className="flex items-center space-x-2 ml-10">
-          <img width={40} height={40} src={Logo} alt="" />
-          <p className="text-[20px] font-bold text-white font-Montaga">Squad</p>
+          <img width={100} height={100} src={Logo} alt="" />
         </div>
         <SearchAcrossPlatform />
       </div>
@@ -30,7 +29,7 @@ function Navbar() {
         <DropDown
           showdownIcon={true}
           className="rounded-md"
-          titleClassName="text-[#4285F4] hover:bg-[#303030] font-semibold text-sm cursor-pointer  px-5 py-[5px] rounded-md font-Montserrat hover:bg-hoverBlack"
+          titleClassName="text-[#4285F4] hover:bg-[#303030] font-semibold text-sm cursor-pointer  px-5 py-[5px] rounded-md font-Montserrat hover:bg-Black-hoverBlack"
           value={workSpace.value}
           setValue={(newVal: string) => {
             workSpace.value = newVal;

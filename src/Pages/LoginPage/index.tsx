@@ -3,7 +3,7 @@ import Loginimg from "@/assets/images/login_poster.svg";
 import Registerimg from "@/assets/images/register_poster.svg";
 import arrowRight from "@/assets/icons/arrow-right.svg";
 import arrowLeft from "@/assets/icons/arrow-left.svg";
-import logo from "@/../public/logo.svg";
+import logo from "@/../public/logo_1.svg";
 import { Input } from "@/components/common/ui/input";
 import { useState } from "react";
 import Checkbox from "@/components/common/CheckBox";
@@ -30,7 +30,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 function GoogleLogIn() {
   return (
-    <div className="flex justify-start items-center space-x-5 bg-blue-login rounded-iphone mt-10 text-white pl-2 pr-10 py-1 cursor-pointer">
+    <div className="w-fit flex justify-start items-center space-x-5 bg-transparent hover:bg-Gray-bgLight dark:hover:bg-Gray-dark-gray rounded-iphone pl-2 pr-10 py-1 cursor-pointer border border-gray">
       <div className="p-1 bg-white rounded-full">
         <img src={GoogleLogo} alt="" />
       </div>
@@ -57,7 +57,7 @@ function Register({ setLoginView }: any) {
   const { setAuth } = useAuth();
   return (
     <div className="h-screen flex justify-center items-center">
-      <div className="bg-gray1 w-[689px] min-h-[599px] px-5 py-2 pb-17.5 border-gray2 border rounded-lg relative">
+      <div className="bg-gray1 w-[689px] min-h-[599px] px-5 py-2 pb-17.5 border-Gray-gray2 border rounded-lg relative">
         <img
           className="absolute -right-48 top-10 -z-10"
           width={285}
@@ -139,7 +139,7 @@ function Login({ setLoginView }: any) {
   const { setAuth } = useAuth();
   return (
     <div className="h-screen flex justify-center items-center">
-      <div className="bg-gray1 w-[689px] min-h-[599px] px-5 py-2 pb-17.5 border-gray2 border rounded-lg relative">
+      <div className="bg-gray1 w-[689px] min-h-[599px] px-5 py-2 pb-17.5 border-Gray-gray2 border rounded-lg relative">
         <img
           className="absolute -left-48 top-10 -z-10"
           width={285}
@@ -224,21 +224,21 @@ export const AuthScreenNew = () => {
   return (
     <div className="dark:bg-black flex flex-col h-screen items-center space-y-2 justify-center relative">
       <div className="w-fit h-fit absolute right-2 top-2">
-        <ThemeToggle />
+        <ThemeToggle
+          bgClassName="bg-white dark:bg-black hover:bg-Gray-light-gray dark:hover:bg-Gray-dark-gray"
+          sunClassName="text-Gray-dark-gray"
+        />
       </div>
       <div>
         <div className="flex flex-col justify-center items-center">
-          <img width={85} height={85} src={logo} alt="" />
-          <h1 className="dark:text-gray text-[30px] font-bold mt-3 font-Montaga">
-            Squad
-          </h1>
-          <p className="text-[#717171] text-sm font-semibold font-Montserrat text-center">
+          <img width={100} height={100} src={logo} alt="" />
+          <p className="text-[#356AC3] text-sm font-semibold font-Montserrat text-center">
             One Stop Solution For All Your School Needs{" "}
           </p>
         </div>
       </div>
       <div className="flex justify-center items-center px-2">
-        <Tabs defaultValue="login">
+        <Tabs className="sm:w-[400px]" defaultValue="login">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="login">Log In</TabsTrigger>
             <TabsTrigger value="register">Register</TabsTrigger>
@@ -276,7 +276,15 @@ export const AuthScreenNew = () => {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button type="submit">Log In</Button>
+                  <div className="w-full flex flex-col space-y-5 items-center">
+                    <Button
+                      className="w-full bg-Blue-primaryBlue dark:bg-Blue-primaryBlue dark:text-white hover:bg-Blue-hoverPrimaryBlue dark:hover:bg-Blue-hoverPrimaryBlue"
+                      type="submit"
+                    >
+                      Log In
+                    </Button>
+                    <GoogleLogIn />
+                  </div>
                 </CardFooter>
               </form>
             </Card>
@@ -330,7 +338,15 @@ export const AuthScreenNew = () => {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button type="submit">Sign Up</Button>
+                  <div className="w-full flex flex-col space-y-5 items-center">
+                    <Button
+                      className="w-full bg-Blue-primaryBlue dark:bg-Blue-primaryBlue dark:text-white hover:bg-Blue-hoverPrimaryBlue dark:hover:bg-Blue-hoverPrimaryBlue"
+                      type="submit"
+                    >
+                      Sign Up
+                    </Button>
+                    <GoogleLogIn />
+                  </div>
                 </CardFooter>
               </form>
             </Card>

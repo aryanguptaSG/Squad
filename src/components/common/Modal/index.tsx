@@ -6,44 +6,40 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/common/ui/dialog"
+} from "@/components/common/ui/dialog";
 
 type Props = {
-    triggerComponent : React.ReactNode,
-    title : string,
-    description?:string,
-    children:React.ReactNode,
-    footer?:React.ReactNode
-}
+  triggerComponent: React.ReactNode;
+  title: string;
+  description?: string;
+  children: React.ReactNode;
+  footer?: React.ReactNode;
+};
 
-export default function Modal({triggerComponent,title,description="",children,footer}:Props) {
+export default function Modal({
+  triggerComponent,
+  title,
+  description = "",
+  children,
+  footer,
+}: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="w-full">
-            {triggerComponent}
-        </div>
+        <div className="w-full">{triggerComponent}</div>
       </DialogTrigger>
       <DialogContent className="max-w-fit">
         <DialogHeader>
-          <DialogTitle className="dark:text-white text-gray-600">{title}</DialogTitle>
-          <DialogDescription>
-            {description}
-          </DialogDescription>
+          <DialogTitle className="dark:text-white text-Gray-gray-600">
+            {title}
+          </DialogTitle>
+          <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
-        <div>
-        {
-            children
-        }
-        </div>
+        <div>{children}</div>
         <DialogFooter>
-          <div>
-            {
-                footer
-            }
-          </div>
+          <div>{footer}</div>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

@@ -95,7 +95,7 @@ function index() {
     ],
   };
   return (
-    <div className="p-5">
+    <div className="h-screen bg-Gray-bgLight text-black dark:bg-black dark:text-white p-5">
       <div className="flex space-x-5 my-10">
         <select
           className="px-3 py-2 rounded-md border border-gray-200"

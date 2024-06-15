@@ -13,11 +13,11 @@ function Stats({ title = "Title", body = "body" }: any) {
       ? "text-orange-500"
       : title == "Teacher"
       ? "text-green-500"
-      : "text-darkGray";
+      : "text-Gray-darkGr";
   return (
     <Card className="w-fit min-w-[200px]  flex flex-col justify-center items-center px-5">
       <CardHeader>
-        <CardTitle className="text-gray">{body}</CardTitle>
+        <CardTitle className="text-Gray-gray">{body}</CardTitle>
       </CardHeader>
       <CardContent>
         <p className={`font-bold text-lg ${color}`}>{title}</p>

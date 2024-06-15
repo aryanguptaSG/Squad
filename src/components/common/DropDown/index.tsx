@@ -1,46 +1,66 @@
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-  } from "@/components/common/ui/dropdown-menu"
-import arrowDown from "@/assets/icons/Expand_down.svg"
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/common/ui/dropdown-menu";
+import arrowDown from "@/assets/icons/Expand_down.svg";
 
-type Align = "center" | "start" | "end"
+type Align = "center" | "start" | "end";
 
 type Props = {
-    value : string,
-    setValue : any ,
-    optionList : Array<string>,
-    titleClassName? : string,
-    className? : string,
-    align ? : Align,
-    showdownIcon? :boolean,
-    iconW?:string,
-    iconH?:string
+  value: string;
+  setValue: any;
+  optionList: Array<string>;
+  titleClassName?: string;
+  className?: string;
+  align?: Align;
+  showdownIcon?: boolean;
+  iconW?: string;
+  iconH?: string;
+};
 
-}
-
-function DropDown(props:Props) {
+function DropDown(props: Props) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="bg-primaryBlack outline-none" asChild>
-        <div className={`flex items-center space-x-3 cursor-pointer ${props.titleClassName}`}>
+      <DropdownMenuTrigger
+        className="bg-Black-primaryBlack outline-none"
+        asChild
+      >
+        <div
+          className={`flex items-center space-x-3 cursor-pointer ${props.titleClassName}`}
+        >
           <div>{props.value}</div>
-          {props.showdownIcon&&<img width={props.iconW?props.iconW: 24} height={props.iconH?props.iconH:24} src={arrowDown} alt="" />}
+          {props.showdownIcon && (
+            <img
+              width={props.iconW ? props.iconW : 24}
+              height={props.iconH ? props.iconH : 24}
+              src={arrowDown}
+              alt=""
+            />
+          )}
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align={props.align?props.align:"center"} className={`dark:bg-primaryBlack dark:border-borderBlack dark:border-1`}>
-        {
-            props.optionList.map((option,i)=>{
-                return (<DropdownMenuItem onClick={()=>{props.setValue(option)}} className={`hover:bg-hoverBlack dark:focus:bg-hoverBlack ${props.className}`} key={i} >
-                {option}
-              </DropdownMenuItem>)
-            })
-        }
+      <DropdownMenuContent
+        align={props.align ? props.align : "center"}
+        className={`dark:bg-Black-primaryBlack dark:border-Black-borderBlack dark:border-1`}
+      >
+        {props.optionList.map((option, i) => {
+          return (
+            <DropdownMenuItem
+              onClick={() => {
+                props.setValue(option);
+              }}
+              className={`hover:bg-Black-hoverBlack dark:focus:bg-Black-hoverBlack ${props.className}`}
+              key={i}
+            >
+              {option}
+            </DropdownMenuItem>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
 
-export default DropDown
+export default DropDown;

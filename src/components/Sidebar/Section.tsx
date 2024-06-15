@@ -30,7 +30,7 @@ function Section({ section }: any) {
         {sideBarExpanded.value && (
           <div className="flex justify-center items-center">
             <p
-              className="whitespace-nowrap text-ellipsis text-gray2 text-[14px] pr-5 font-Montserrat"
+              className="whitespace-nowrap text-ellipsis text-Gray-gray2 text-[14px] pr-5 font-Montserrat"
               onMouseOver={() => {
                 sideBarExpanded.value = true;
               }}
@@ -46,7 +46,7 @@ function Section({ section }: any) {
         )}
       </div>
       {isOpen && sideBarExpanded.value && (
-        <div className="border-l-3 rounded-tl-[10px] rounded-bl-[10px] border-gray flex-col space-y-2 ml-3 mt-2 p-1">
+        <div className="border-l-1 rounded-tl-[5px] rounded-bl-[5px] border-gray flex-col space-y-3 ml-3 mt-2 p-1 pl-5">
           {section.links.map((item: any, i: any) => {
             switch (item.type) {
               case "LEAF":

@@ -17,10 +17,14 @@ function Leaf({ item }: any) {
           : ""
       }`}
     >
-      <img width={24} height={24} src={item.icon} alt={item.description} />
+      {item.icon && (
+        <img width={24} height={24} src={item.icon} alt={item.description} />
+      )}
       {sideBarExpanded.value && (
         <p
-          className="whitespace-nowrap text-ellipsis text-gray2 text-[14px] pr-5 font-Montserrat"
+          className={`whitespace-nowrap text-ellipsis text-Gray-gray2 text-[14px] pr-5 font-Montserrat ${
+            !item.icon ? "pl-3" : ""
+          }`}
           onMouseOver={() => {
             sideBarExpanded.value = true;
           }}

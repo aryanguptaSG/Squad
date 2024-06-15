@@ -19,7 +19,7 @@ function Router() {
       <Route
         path="/*"
         element={
-          <div className="h-screen flex justify-center items-center bg-bgLight text-black dark:bg-black dark:text-white">
+          <div className="h-screen flex justify-center items-center bg-Gray-bgLight text-black dark:bg-black dark:text-white">
             404 | No Page Found
           </div>
         }

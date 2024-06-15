@@ -20,6 +20,32 @@ function Sidebar() {
       Access: Authorization.ReadWrite,
     },
     {
+      type: "TOPLEVEL",
+      icon: homeIcon,
+      name: "Profile",
+      links: [
+        {
+          type: "LEAF",
+          description: "Account",
+          to: "/",
+          Access: Authorization.ReadWrite,
+        },
+        {
+          type: "LEAF",
+          description: "Appearance",
+          to: "/",
+          Access: Authorization.ReadWrite,
+        },
+        {
+          type: "LEAF",
+          description: "Display",
+          to: "/",
+          Access: Authorization.ReadWrite,
+        },
+      ],
+      Access: Authorization.ReadWrite,
+    },
+    {
       type: "LEAF",
       icon: PaymentIcon,
       description: "Fees",
@@ -51,7 +77,7 @@ function Sidebar() {
 
   return (
     <div
-      className={`bg-primaryBlack transition-all duration-300 ${
+      className={`bg-Black-primaryBlack transition-all duration-300 ${
         sideBarExpanded.value ? "w-[250px]" : "w-[60px]"
       } text-white pt-10`}
       onMouseOver={() => {

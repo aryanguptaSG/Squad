@@ -36,12 +36,12 @@ function AddNewPeopleModal(props: AddNewPeopleModalProps) {
             type="file"
             accept=".csv,.xlsx"
             onChange={handleFileChange}
-            className="bg-transparent border-[#B7B7B7] dark:border-borderBlack dark:text-light-gray  dark:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+            className="bg-transparent border-[#B7B7B7] dark:border-Black-borderBlack dark:text-Gray-light-gray  dark:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
           />
           <DropDown
             showdownIcon={true}
             className="rounded-md "
-            titleClassName="dark:text-gray text-dark-gray cursor-pointer text-xs bg-transparent w-fit hover:bg-none border border-gray px-5 py-2 rounded-lg"
+            titleClassName="dark:text-Gray-gray text-Gray-dark-gray cursor-pointer text-xs bg-transparent w-fit hover:bg-none border border-gray px-5 py-2 rounded-lg"
             value={selectedRole}
             setValue={(newVal: string) => {
               setSelectedRole(newVal);

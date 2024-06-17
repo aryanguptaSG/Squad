@@ -6,7 +6,18 @@ import NotesPage from "./NotesPage";
 import QuestionBank from "./QuestionBankPage";
 import ClassRoom from "./ClassRoom";
 import Feespage from "./FeesPage";
+import Workspace from "./Workspace";
+import { useEffect } from "react";
+import apiCall from "@/api/apiCall";
+import { GET_WORKSPACE } from "@/api/Endpoints";
+import { allWorkspaces } from "@/Context/Signals";
+
 function Router() {
+  useEffect(() => {
+    apiCall(GET_WORKSPACE, "GET", {}).then(
+      (res) => (allWorkspaces.value = res)
+    );
+  }, []);
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
@@ -16,6 +27,7 @@ function Router() {
       <Route path="/question-bank/" element={<QuestionBank />} />
       <Route path="/classroom/" element={<ClassRoom />} />
       <Route path="/fees/" element={<Feespage />} />
+      <Route path="/workspaces" element={<Workspace />} />
       <Route
         path="/*"
         element={

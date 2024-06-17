@@ -14,8 +14,14 @@ type CreatePostModalProps = {
 
 function CreatePostModal(props: CreatePostModalProps) {
   const [workSpace, setworkSpace] = useState("public");
+  const [showModal, setShowModal] = useState(false);
   return (
-    <Modal triggerComponent={props.triggerComponent} title="Create New Post">
+    <Modal
+      open={showModal}
+      setOpen={setShowModal}
+      triggerComponent={props.triggerComponent}
+      title="Create New Post"
+    >
       <div className="w-[600px]">
         <div className="flex space-x-3 dark:hover:bg-Gray-dark-gray hover:bg-light-gray rounded-lg w-fit p-3">
           <ProfileImage src="" fallback="AG" />

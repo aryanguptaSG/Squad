@@ -1,25 +1,25 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState } from "react";
 
-type Auth = string | undefined
+type Auth = any | string | undefined;
 
 type AuthProviderProps = {
-  children: React.ReactNode
-  defaultAuth?: Auth
-  storageKey?: string
-  fallBackComponent:React.ReactNode
-}
+  children: React.ReactNode;
+  defaultAuth?: Auth;
+  storageKey?: string;
+  fallBackComponent: React.ReactNode;
+};
 
 type AuthProviderState = {
-  auth: Auth
-  setAuth: (auth: Auth) => void
-}
+  auth: Auth;
+  setAuth: (auth: Auth) => void;
+};
 
 const initialState: AuthProviderState = {
   auth: "null",
   setAuth: () => null,
-}
+};
 
-const AuthProviderContext = createContext<AuthProviderState>(initialState)
+const AuthProviderContext = createContext<AuthProviderState>(initialState);
 
 export function AuthProvider({
   children,
@@ -29,29 +29,29 @@ export function AuthProvider({
   ...props
 }: AuthProviderProps) {
   const [auth, setAuth] = useState<Auth>(
-    () => (localStorage.getItem(storageKey) as Auth) || defaultAuth
-  )
-  
+    () => (JSON.parse(localStorage.getItem(storageKey)!) as Auth) || defaultAuth
+  );
+
   const value = {
     auth,
     setAuth: (auth: Auth) => {
-      localStorage.setItem(storageKey, auth as string)
-      setAuth(auth)
+      localStorage.setItem(storageKey, auth as string);
+      setAuth(auth);
     },
-  }
+  };
 
   return (
     <AuthProviderContext.Provider {...props} value={value}>
-      {auth !== "null" ? children:fallBackComponent}
+      {auth !== "null" ? children : fallBackComponent}
     </AuthProviderContext.Provider>
-  )
+  );
 }
 
 export const useAuth = () => {
-  const context = useContext(AuthProviderContext)
+  const context = useContext(AuthProviderContext);
 
   if (context === undefined)
-    throw new Error("useAuth must be used within a AuthProvider")
+    throw new Error("useAuth must be used within a AuthProvider");
 
-  return context
-}
+  return context;
+};

@@ -1,5 +1,7 @@
 import { effect, signal } from "@preact/signals-react";
 
+export const allWorkspaces = signal([]);
+
 export const workSpace = signal(localStorage.getItem("workSpace")!);
 effect(() => {
   localStorage.setItem("workSpace", workSpace.value);

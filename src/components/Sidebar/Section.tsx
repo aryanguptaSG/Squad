@@ -5,7 +5,6 @@ import Leaf from "./Leaf";
 
 function Section({ section }: any) {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
 
   return (
     <div>

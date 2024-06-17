@@ -8,12 +8,12 @@ import { ThemeToggle } from "../ThemeToggle";
 import { workSpace } from "@/Context/Signals";
 import { sideBarExpanded } from "@/Context/Signals";
 import { useTheme } from "@/Context/ThemeProvider";
+import { useAuth } from "@/Context/AuthProvider";
+import { allWorkspaces } from "@/Context/Signals";
 
 function Navbar() {
   const { theme } = useTheme();
-  console.log("====================================");
-  console.log(theme);
-  console.log("====================================");
+  const { auth } = useAuth();
   return (
     <div className="bg-white dark:bg-black h-[60px] w-full text-white fixed z-50 flex justify-between items-center">
       <div className="pl-[10px] flex items-center">
@@ -39,17 +39,23 @@ function Navbar() {
           setValue={(newVal: string) => {
             workSpace.value = newVal;
           }}
-          optionList={["Golu School", "Shiva Ji Inter Collage"]}
+          optionList={allWorkspaces.value.map((item: any) => item.name)}
         />
         <ThemeToggle
           bgClassName="bg-white dark:bg-black hover:bg-Gray-light-gray dark:hover:bg-Gray-dark-gray"
           sunClassName="text-Gray-dark-gray"
         />
         <Bell color={theme == "light" ? "#aaa" : "#cccccc"} />
-        <ProfileImage src="" fallback="AG" dropdown={true} />
+        <ProfileImage
+          src={auth.user.profilePic}
+          fallback="AG"
+          dropdown={true}
+        />
       </div>
     </div>
   );
 }
 
 export default Navbar;
+
+// 9353891277;

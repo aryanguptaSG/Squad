@@ -1,14 +1,21 @@
 import Modal from "@/components/common/Modal";
 import Button from "@/components/common/Button";
 import { Input } from "@/components/common/ui/input";
+import { useState } from "react";
 
 type CreateClassModalProps = {
   triggerComponent: React.ReactNode;
 };
 
 function CreateClassModal(props: CreateClassModalProps) {
+  const [showModal, setShowModal] = useState(false);
   return (
-    <Modal triggerComponent={props.triggerComponent} title="Create New Class">
+    <Modal
+      open={showModal}
+      setOpen={setShowModal}
+      triggerComponent={props.triggerComponent}
+      title="Create New Class"
+    >
       <div className="w-[600px]">
         <div className="px-3 mt-3 space-y-5">
           <Input

@@ -14,6 +14,8 @@ type Props = {
   description?: string;
   children: React.ReactNode;
   footer?: React.ReactNode;
+  open: boolean;
+  setOpen: any;
 };
 
 export default function Modal({
@@ -22,9 +24,11 @@ export default function Modal({
   description = "",
   children,
   footer,
+  open,
+  setOpen,
 }: Props) {
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <div className="w-full">{triggerComponent}</div>
       </DialogTrigger>

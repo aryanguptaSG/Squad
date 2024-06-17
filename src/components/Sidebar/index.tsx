@@ -5,12 +5,16 @@ import notesIcon from "@/assets/icons/notes.svg";
 import QuestionBankIcon from "@/assets/icons/question_bank.svg";
 import PaymentIcon from "@/assets/icons/payment.svg";
 import classroomIcon from "@/assets/icons/classroom.svg";
+import workspaceIcon from "@/assets/icons/workspace.svg";
 import { sideBarExpanded } from "@/Context/Signals";
 import Leaf from "./Leaf";
 import Section from "./Section";
 import { Authorization } from "@/Context/AuthProvider/AuthTypes";
+import { PlusCircledIcon } from "@radix-ui/react-icons";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
+  const navigate = useNavigate();
   const sidebarElements = [
     {
       type: "LEAF",
@@ -73,6 +77,13 @@ function Sidebar() {
       to: "/classroom",
       Access: Authorization.ReadWrite,
     },
+    {
+      type: "LEAF",
+      icon: workspaceIcon,
+      description: "Workspace",
+      to: "/workspaces",
+      Access: Authorization.ReadWrite,
+    },
   ];
 
   return (
@@ -98,7 +109,7 @@ function Sidebar() {
             case "LEAF":
               return <Leaf item={item} key={i} />;
             case "TOPLEVEL":
-              return <Section section={item} />;
+              return <Section key={i} section={item} />;
             default:
               return null;
           }

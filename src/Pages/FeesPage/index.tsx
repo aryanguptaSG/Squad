@@ -1,5 +1,7 @@
 import Chart from "@/components/common/Chart";
 import { useEffect, useState } from "react";
+import Brochure from "./Brochure";
+import Text from "@/components/common/Text";
 
 function index() {
   const [totalStudents, setTotalStudents] = useState(5000);
@@ -95,7 +97,19 @@ function index() {
     ],
   };
   return (
-    <div className="h-screen bg-Gray-bgLight text-black dark:bg-black dark:text-white p-5">
+    <div className="h-screen bg-white text-black dark:bg-Gray-dark-gray dark:text-white p-5">
+      <div className="flex justify-between">
+        <div>
+          <h1 className="body-1 font-Montserrat">Hey , Aryan Gupta </h1>
+          <Text as="p" className="text-fs-15 mt-1">
+            Welcome Back 🎉
+          </Text>
+        </div>
+        <div>
+          <Brochure />
+        </div>
+      </div>
+
       <div className="flex space-x-5 my-10">
         <select
           className="px-3 py-2 rounded-md border border-gray-200"

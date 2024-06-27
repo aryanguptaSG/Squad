@@ -15,7 +15,7 @@ type AuthProviderState = {
 };
 
 const initialState: AuthProviderState = {
-  auth: "null",
+  auth: null,
   setAuth: () => null,
 };
 
@@ -23,7 +23,7 @@ const AuthProviderContext = createContext<AuthProviderState>(initialState);
 
 export function AuthProvider({
   children,
-  defaultAuth = "null",
+  defaultAuth = null,
   storageKey = "vite-ui-auth",
   fallBackComponent,
   ...props
@@ -35,14 +35,14 @@ export function AuthProvider({
   const value = {
     auth,
     setAuth: (auth: Auth) => {
-      localStorage.setItem(storageKey, auth as string);
+      localStorage.setItem(storageKey, JSON.stringify(auth) as string);
       setAuth(auth);
     },
   };
 
   return (
     <AuthProviderContext.Provider {...props} value={value}>
-      {auth !== "null" ? children : fallBackComponent}
+      {auth !== null && auth.authToken ? children : fallBackComponent}
     </AuthProviderContext.Provider>
   );
 }

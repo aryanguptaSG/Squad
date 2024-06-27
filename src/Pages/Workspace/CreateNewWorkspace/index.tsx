@@ -27,8 +27,7 @@ function CreateWorkSpaceModal(props: CreateClassModalProps) {
       name,
       logoIcon: logo,
     };
-    // const res = await apiCall(CREATE_WORKSPACE, "POST", data);
-    console.log(data);
+    const res = await apiCall(CREATE_WORKSPACE, "POST", data);
     setShowModal(false);
   };
   return (

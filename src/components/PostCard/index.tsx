@@ -34,7 +34,7 @@ function PostCard(props: Props) {
     });
   };
   return (
-    <div className="w-[600px] bg-white dark:bg-black pt-4 pb-4 border border-Gray-gray2 dark:border-Black-borderBlack rounded-2.5 shadow-box dark:shadow-dark-box">
+    <div className="max-w-[600px] bg-white dark:bg-black pt-4 pb-4 border border-Gray-gray2 dark:border-Black-borderBlack rounded-md shadow-box dark:shadow-dark-box">
       <div className="px-2 pr-5">
         <div className="flex justify-between items-start">
           <div className="flex space-x-2 items-start">

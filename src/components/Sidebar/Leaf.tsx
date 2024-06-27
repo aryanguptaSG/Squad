@@ -8,12 +8,15 @@ function Leaf({ item }: any) {
     <div
       onClick={() => {
         navigate(item.to);
+        sideBarExpanded.value = false;
       }}
       className={`flex items-center space-x-5 overflow-hidden cursor-pointer p-1 ${
         sideBarExpanded.value && "hover:bg-[#3c3c3c] hover:rounded-md"
       } ${
         window.location.pathname === item.to
-          ? "bg-[#606060] rounded-md p-1"
+          ? `md:bg-[#606060] ${
+              sideBarExpanded.value && "bg-[#606060]"
+            } rounded-md p-1`
           : ""
       }`}
     >

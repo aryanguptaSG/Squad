@@ -8,6 +8,7 @@ type Props = {
   variant?: Variant;
   onClick?: any;
   style?: any;
+  type?: any;
 };
 
 function Button(props: Props) {
@@ -17,6 +18,7 @@ function Button(props: Props) {
     variant = "default",
     onClick,
     style = {},
+    type = "button",
   } = props;
   const disabled = variant === "disabled";
   let btnColor = "";
@@ -35,6 +37,7 @@ function Button(props: Props) {
   }
   return (
     <button
+      type={type}
       style={style}
       className={cn(
         `rounded-lg py-2 px-4 font-semibold w-11rem font-Montserrat`,

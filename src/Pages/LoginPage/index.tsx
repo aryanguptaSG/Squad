@@ -1,12 +1,7 @@
 import { useAuth } from "@/Context/AuthProvider";
-import Loginimg from "@/assets/images/login_poster.svg";
-import Registerimg from "@/assets/images/register_poster.svg";
-import arrowRight from "@/assets/icons/arrow-right.svg";
-import arrowLeft from "@/assets/icons/arrow-left.svg";
 import logo from "@/../public/logo_1.svg";
 import { Input } from "@/components/common/ui/input";
 import { useEffect, useState } from "react";
-import Checkbox from "@/components/common/CheckBox";
 import Text from "@/components/common/Text";
 import GoogleLogo from "@/assets/images/Google_Logo.svg";
 
@@ -29,7 +24,8 @@ import {
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useGoogleLogin, googleLogout } from "@react-oauth/google";
 import axios from "axios";
-import { SIGN_IN_WITH_GOOGLE } from "@/api/Endpoints";
+import { LOG_IN, SIGN_IN_WITH_GOOGLE } from "@/api/Endpoints";
+import apiCall from "@/api/apiCall";
 
 function GoogleLogIn() {
   const [user, setUser]: any = useState(null);
@@ -42,7 +38,7 @@ function GoogleLogIn() {
   useEffect(() => {
     if (user) {
       axios.post(SIGN_IN_WITH_GOOGLE, user).then((res: any) => {
-        setAuth(JSON.stringify(res.data));
+        setAuth(res.data);
       });
     }
   }, [user]);
@@ -65,6 +61,15 @@ function GoogleLogIn() {
 
 export const AuthScreenNew = () => {
   const { setAuth } = useAuth();
+  const [logInEmail, setLogInEmail] = useState("");
+  const [logInPass, setLogInPass] = useState("");
+  const LogIn = async () => {
+    const res = await apiCall(LOG_IN, "POST", {
+      email: logInEmail,
+      password: logInPass,
+    });
+    setAuth(res);
+  };
   return (
     <div className="dark:bg-black flex flex-col h-screen items-center space-y-2 justify-center relative">
       <div className="w-fit h-fit absolute right-2 top-2">
@@ -98,7 +103,7 @@ export const AuthScreenNew = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  setAuth("logged in");
+                  LogIn();
                 }}
               >
                 <CardContent className="space-y-2">
@@ -108,6 +113,10 @@ export const AuthScreenNew = () => {
                       id="email"
                       type="email"
                       placeholder="acb@hamil.com"
+                      value={logInEmail}
+                      onChange={(e) => {
+                        setLogInEmail(e.target.value);
+                      }}
                     />
                   </div>
                   <div className="space-y-1">
@@ -116,6 +125,10 @@ export const AuthScreenNew = () => {
                       id="password"
                       type="password"
                       placeholder="Enter your password"
+                      value={logInPass}
+                      onChange={(e) => {
+                        setLogInPass(e.target.value);
+                      }}
                     />
                   </div>
                 </CardContent>
@@ -144,7 +157,7 @@ export const AuthScreenNew = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  setAuth("logged in");
+                  setAuth({});
                 }}
               >
                 <CardContent className="space-y-2">

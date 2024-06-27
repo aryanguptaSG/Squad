@@ -2,15 +2,16 @@ import searchIcon from "@/assets/icons/search.svg";
 import Modal from "../Modal";
 import { Input } from "@/components/common/ui/input";
 import { useKeyPress2 } from "../../../Hooks/UseKeyPress";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function SearchAcrossPlatform() {
+  const [showModal, setShowModal] = useState(false);
   const trigger = useRef<HTMLInputElement>(null);
   const isMac = window.navigator.platform.toLowerCase().includes("mac");
   const triggerComponent = (
     <div
       ref={trigger}
-      className="cursor-pointer h-[40px] w-[250px] bg-Gray-light-gray dark:bg-Black-black1 rounded-md ml-[76px] flex justify-start items-center px-2 border-Gray-light-gray dark:border-Black-borderBlack border-[0.1px]"
+      className="cursor-pointer h-[40px] w-[250px] bg-Black-black1 rounded-md ml-[76px] flex justify-start items-center px-2 border-Black-borderBlack border-[0.1px]"
     >
       <img className="" width={24} height={24} src={searchIcon} alt="search" />
       <p className="text-[12px] ml-[10px] text-Gray-darkGray font-Montserrat">
@@ -26,6 +27,8 @@ function SearchAcrossPlatform() {
   });
   return (
     <Modal
+      open={showModal}
+      setOpen={setShowModal}
       triggerComponent={triggerComponent}
       title="Search Across Platform"
       description="Search anything across the platform with optimised search algorithm"

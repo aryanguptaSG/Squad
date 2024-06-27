@@ -1,43 +1,24 @@
 import { effect, signal } from "@preact/signals-react";
 
-export const allWorkspaces = signal([]);
+export const allWorkspaces: any = signal([]);
 
-export const workSpace = signal(localStorage.getItem("workSpace")!);
+export const workSpace: any = signal(null);
+
+export const workSpaceId = signal(localStorage.getItem("workSpaceId"));
 effect(() => {
-  localStorage.setItem("workSpace", workSpace.value);
+  localStorage.setItem("workSpaceId", String(workSpaceId.value));
 });
 
 export const sideBarExpanded = signal(false);
 
-export const peopleInWorkspace = signal(
-  JSON.parse(localStorage.getItem("peopleInWorkspace")!) || [
-    {
-      role: "ADMIN",
-      email: "ken99@yahoo.com",
-    },
-    {
-      role: "SUPER ADMIN",
-      email: "Abe45@gmail.com",
-    },
-    {
-      role: "TEACHER",
-      email: "Monserrat44@gmail.com",
-    },
-    {
-      role: "STUDENT",
-      email: "Silas22@gmail.com",
-    },
-    {
-      role: "SUPER ADMIN",
-      email: "Abe45@gmail.com",
-    },
-    {
-      role: "TEACHER",
-      email: "Monserrat44@gmail.com",
-    },
-    {
-      role: "STUDENT",
-      email: "Silas22@gmail.com",
-    },
-  ]
-);
+export const peopleInWorkspace = signal([]);
+
+export const feesConfig = signal([
+  { name: "Admission Fees", duration: 1 },
+  { name: "Exam Fees", duration: 2 },
+  { name: "Tution Fees", duration: 12 },
+]);
+
+export const classRooms = signal([]);
+
+export const selectedClass = signal("");

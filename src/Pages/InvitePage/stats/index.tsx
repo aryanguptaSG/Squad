@@ -7,9 +7,9 @@ import {
 
 function Stats({ title = "Title", body = "body" }: any) {
   let color =
-    title == "Super Admin"
+    title == "Admin"
       ? "text-red-500"
-      : title == "Admin"
+      : title == "Sub Admin"
       ? "text-orange-500"
       : title == "Teacher"
       ? "text-green-500"

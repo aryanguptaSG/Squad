@@ -1,23 +1,19 @@
 import {
-  ArrowDownIcon,
-  ArrowRightIcon,
-  ArrowUpIcon,
   CheckCircledIcon,
   CircleIcon,
-  CrossCircledIcon,
   QuestionMarkCircledIcon,
   StopwatchIcon,
 } from "@radix-ui/react-icons";
 
 export const statuses = [
   {
-    value: "SUPER ADMIN",
-    label: "Super Admin",
+    value: "ADMIN",
+    label: "Admin",
     icon: QuestionMarkCircledIcon,
   },
   {
-    value: "ADMIN",
-    label: "Admin",
+    value: "SUBADMIN",
+    label: "Sub Admin",
     icon: CircleIcon,
   },
   {

@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@/Context/ThemeProvider";
 import { AuthProvider } from "./Context/AuthProvider";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { sideBarExpanded } from "@/Context/Signals";
 
 function App() {
   return (
@@ -13,11 +14,18 @@ function App() {
       <GoogleOAuthProvider clientId="442084594356-0okngnlbvdi17u05b0f6thvidovmepmk.apps.googleusercontent.com">
         <AuthProvider fallBackComponent={<AuthScreenNew />}>
           <BrowserRouter>
-            <div className="bg-white dark:bg-black">
+            <div className="bg-white dark:bg-Gray-dark-gray md:bg-black md:dark:bg-black">
               <Navbar />
               <div className="flex justify-start h-[calc(100vh-60px)] relative top-[60px]">
                 <Sidebar />
-                <div className=" w-full rounded-ss-2xl overflow-x-clip overflow-scroll hide-scrollbar">
+                <div
+                  onClick={() => {
+                    if (sideBarExpanded.value) {
+                      sideBarExpanded.value = false;
+                    }
+                  }}
+                  className=" w-full rounded-ss-2xl overflow-x-clip overflow-scroll hide-scrollbar"
+                >
                   <Router />
                 </div>
               </div>

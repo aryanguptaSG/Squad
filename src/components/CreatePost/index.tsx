@@ -69,7 +69,7 @@ function CreatePost() {
     { icon: pencilIcon, text: "Write Article" },
   ];
   return (
-    <div className="w-[600px] bg-white dark:bg-black pt-3 pb-4 px-2 pr-5 border border-Gray-gray2 dark:border-Black-borderBlack rounded-2.5 shadow-box dark:shadow-dark-box">
+    <div className="md:w-[600px] w-full bg-white dark:bg-black pt-3 pb-4 px-2 pr-5 border border-Gray-gray2 dark:border-Black-borderBlack rounded-2.5 shadow-box dark:shadow-dark-box">
       <div className="flex space-x-2 items-center">
         <ProfileImage className="w-[40px] h-[40px]" src="" fallback="AG" />
         <CreatePostModal
